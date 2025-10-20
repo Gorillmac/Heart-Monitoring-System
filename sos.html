@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual SOS - Heart Monitoring System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>❤️ Heart Monitor</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="monitoring.html">Monitoring</a></li>
+                <li><a href="sos.html" class="active">SOS</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="userDropdown">
+                        <span id="navUsername">User</span> ▼
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="profile.html">Profile Settings</a>
+                        <a href="logout.html">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="sos-section">
+            <h2>Emergency SOS Alert</h2>
+            <p class="sos-description">Press the button below to send an immediate SOS alert to your emergency contacts with your current GPS location.</p>
+            
+            <div class="sos-button-container">
+                <button id="sosButton" class="sos-button">
+                    <span class="sos-icon">🚨</span>
+                    <span class="sos-text">EMERGENCY SOS</span>
+                </button>
+            </div>
+
+            <div class="sos-info">
+                <h3>Emergency Contacts</h3>
+                <div id="emergencyContactsList" class="contacts-preview">
+                    <p class="loading-text">Loading contacts...</p>
+                </div>
+                <a href="contacts.html" class="btn btn-secondary">Manage Contacts</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="sosModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>⚠️ SOS Alert Confirmation</h2>
+            </div>
+            <div class="modal-body">
+                <div class="countdown-container">
+                    <p>Alert will be sent in:</p>
+                    <div class="countdown-number" id="countdown">3</div>
+                </div>
+                <p class="modal-text">Your emergency contacts will be notified with your GPS location.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelSOS" class="btn btn-danger btn-large">Cancel Alert</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>✅ Alert Sent Successfully</h2>
+            </div>
+            <div class="modal-body">
+                <p>Your SOS alert has been sent to all emergency contacts with your current location.</p>
+                <div class="alert-details">
+                    <p><strong>Time:</strong> <span id="alertTime"></span></p>
+                    <p><strong>Location:</strong> <span id="alertLocation">Acquiring GPS...</span></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="closeSuccessModal" class="btn btn-primary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Heart Monitoring System. Your safety is our priority.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/sos.js"></script>
+</body>
+</html>
