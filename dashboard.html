@@ -1,0 +1,81 @@
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="welcome-section">
+            <h2>Welcome, <span id="userName">User</span>!</h2>
+            <p class="status-text">System Status: <span id="systemStatus" class="status-badge status-inactive">Inactive</span></p>
+        </div>
+
+        <div class="control-section">
+            <button id="startMonitoringBtn" class="btn btn-success btn-large">
+                <span class="btn-icon">▶</span> Start Monitoring
+            </button>
+            <button id="stopMonitoringBtn" class="btn btn-danger btn-large" style="display: none;">
+                <span class="btn-icon">⏸</span> Stop Monitoring
+            </button>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">💓</div>
+                <div class="stat-info">
+                    <h3>Heart Rate</h3>
+                    <p class="stat-value" id="currentHeartRate">--</p>
+                    <p class="stat-unit">BPM</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-info">
+                    <h3>GSR Level</h3>
+                    <p class="stat-value" id="currentGSR">--</p>
+                    <p class="stat-unit">μS</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-info">
+                    <h3>Status</h3>
+                    <p class="stat-value" id="healthStatus">Normal</p>
+                    <p class="stat-unit">Condition</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏱️</div>
+                <div class="stat-info">
+                    <h3>Monitoring Time</h3>
+                    <p class="stat-value" id="monitoringTime">00:00:00</p>
+                    <p class="stat-unit">Duration</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="charts-section">
+            <div class="chart-container">
+                <h3>Heart Rate Monitor</h3>
+                <canvas id="heartRateChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>GSR Monitor</h3>
+                <canvas id="gsrChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Heart Monitoring System. Your safety is our priority.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

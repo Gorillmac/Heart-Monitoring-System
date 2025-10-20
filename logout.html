@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - Heart Monitoring System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-box">
+            <div class="form-header">
+                <h2>Come Back Soon!</h2>
+                <p>You have been successfully logged out</p>
+            </div>
+
+            <div class="logout-content">
+                <div class="logout-icon">👋</div>
+                <p class="logout-message">Thank you for using the Heart Monitoring System. Your session has ended securely.</p>
+                
+                <div class="logout-stats">
+                    <h3>Session Summary</h3>
+                    <div id="sessionSummary" class="session-info">
+                        <p><strong>Session Duration:</strong> <span id="sessionDuration">--</span></p>
+                        <p><strong>Logout Time:</strong> <span id="logoutTime">--</span></p>
+                    </div>
+                </div>
+
+                <div class="logout-actions">
+                    <a href="login.html" class="btn btn-primary btn-block">Login Again</a>
+                    <a href="index.html" class="btn btn-secondary btn-block">Go to Homepage</a>
+                </div>
+
+                <div class="logout-tips">
+                    <h4>Security Tips</h4>
+                    <ul>
+                        <li>Always logout when using shared devices</li>
+                        <li>Keep your password secure and confidential</li>
+                        <li>Update your emergency contacts regularly</li>
+                        <li>Ensure your device's location services are enabled for accurate alerts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginTime = localStorage.getItem('loginTime');
+            const logoutTime = new Date();
+            
+            if (loginTime) {
+                const duration = logoutTime - new Date(parseInt(loginTime));
+                const hours = Math.floor(duration / 3600000);
+                const minutes = Math.floor((duration % 3600000) / 60000);
+                const seconds = Math.floor((duration % 60000) / 1000);
+                
+                document.getElementById('sessionDuration').textContent = 
+                    `${hours}h ${minutes}m ${seconds}s`;
+            } else {
+                document.getElementById('sessionDuration').textContent = 'N/A';
+            }
+            
+            document.getElementById('logoutTime').textContent = logoutTime.toLocaleString();
+            
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('loginTime');
+        });
+    </script>
+
+    <style>
+        .logout-content {
+            text-align: center;
+        }
+
+        .logout-icon {
+            font-size: 5rem;
+            margin: 2rem 0;
+        }
+
+        .logout-message {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .logout-stats {
+            background: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .logout-stats h3 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .session-info p {
+            margin: 0.5rem 0;
+            color: var(--text-color);
+        }
+
+        .logout-actions {
+            margin-bottom: 2rem;
+        }
+
+        .logout-actions .btn {
+            margin-bottom: 0.75rem;
+        }
+
+        .logout-tips {
+            text-align: left;
+            background: #fff3cd;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--warning-color);
+        }
+
+        .logout-tips h4 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .logout-tips ul {
+            list-style-position: inside;
+            color: var(--text-color);
+        }
+
+        .logout-tips li {
+            margin: 0.5rem 0;
+            line-height: 1.5;
+        }
+    </style>
+</body>
+</html>
