@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Contacts - Heart Monitoring System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/forms.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>❤️ Heart Monitor</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="monitoring.html">Monitoring</a></li>
+                <li><a href="sos.html">SOS</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="contacts.html" class="active">Contacts</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="userDropdown">
+                        <span id="navUsername">User</span> ▼
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="profile.html">Profile Settings</a>
+                        <a href="logout.html">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="page-header">
+            <h2>Emergency Contacts</h2>
+            <p>Manage up to 3 emergency contacts who will be notified during SOS alerts</p>
+        </div>
+
+        <div class="contacts-section">
+            <div class="contacts-list" id="contactsList">
+                <p class="loading-text">Loading contacts...</p>
+            </div>
+
+            <button id="addContactBtn" class="btn btn-primary">
+                <span>+</span> Add Emergency Contact
+            </button>
+        </div>
+    </div>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add Emergency Contact</h2>
+                <button class="close-modal" id="closeContactModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="contactForm">
+                    <input type="hidden" id="contactId">
+                    
+                    <div class="form-group">
+                        <label for="contactName">Full Name</label>
+                        <input type="text" id="contactName" name="contactName" required>
+                        <span class="error-message" id="contactNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactPhone">Phone Number</label>
+                        <input type="tel" id="contactPhone" name="contactPhone" required>
+                        <span class="error-message" id="contactPhoneError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactRelation">Relationship</label>
+                        <select id="contactRelation" name="contactRelation" required>
+                            <option value="">Select relationship</option>
+                            <option value="family">Family Member</option>
+                            <option value="friend">Friend</option>
+                            <option value="spouse">Spouse/Partner</option>
+                            <option value="colleague">Colleague</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="error-message" id="contactRelationError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactEmail">Email (Optional)</label>
+                        <input type="email" id="contactEmail" name="contactEmail">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="cancelContactBtn">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Contact</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Heart Monitoring System. Your safety is our priority.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/contacts.js"></script>
+</body>
+</html>

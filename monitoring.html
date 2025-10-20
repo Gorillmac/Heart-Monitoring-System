@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Monitoring - Heart Monitoring System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>❤️ Heart Monitor</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="monitoring.html" class="active">Monitoring</a></li>
+                <li><a href="sos.html">SOS</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="userDropdown">
+                        <span id="navUsername">User</span> ▼
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="profile.html">Profile Settings</a>
+                        <a href="logout.html">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="page-header">
+            <h2>Vital Signs Monitoring</h2>
+            <p>Start or stop real-time monitoring of your heart rate and GSR levels</p>
+        </div>
+
+        <div class="monitoring-section">
+            <div class="monitoring-status">
+                <h3>Current Status</h3>
+                <p class="status-text">System Status: <span id="systemStatus" class="status-badge status-inactive">Inactive</span></p>
+                <p id="monitoringDuration" class="monitoring-duration">Duration: 00:00:00</p>
+            </div>
+
+            <div class="control-section">
+                <button id="startMonitoringBtn" class="btn btn-success btn-large">
+                    <span class="btn-icon">▶</span> Start Monitoring
+                </button>
+                <button id="stopMonitoringBtn" class="btn btn-danger btn-large" style="display: none;">
+                    <span class="btn-icon">⏸</span> Stop Monitoring
+                </button>
+            </div>
+
+            <div class="monitoring-info">
+                <h3>What happens when you start monitoring?</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon">💓</div>
+                        <h4>Heart Rate Tracking</h4>
+                        <p>Continuous monitoring of your heart rate in beats per minute (BPM)</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">⚡</div>
+                        <h4>GSR Measurement</h4>
+                        <p>Real-time galvanic skin response tracking to detect stress levels</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📊</div>
+                        <h4>Live Charts</h4>
+                        <p>Visual representation of your vital signs on the dashboard</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🚨</div>
+                        <h4>Automatic Alerts</h4>
+                        <p>System will detect abnormal patterns and notify your emergency contacts</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="current-readings">
+                <h3>Current Readings</h3>
+                <div class="readings-grid">
+                    <div class="reading-card">
+                        <div class="reading-label">Heart Rate</div>
+                        <div class="reading-value" id="currentHeartRate">--</div>
+                        <div class="reading-unit">BPM</div>
+                    </div>
+                    <div class="reading-card">
+                        <div class="reading-label">GSR Level</div>
+                        <div class="reading-value" id="currentGSR">--</div>
+                        <div class="reading-unit">μS</div>
+                    </div>
+                    <div class="reading-card">
+                        <div class="reading-label">Status</div>
+                        <div class="reading-value" id="healthStatus">Normal</div>
+                        <div class="reading-unit">Condition</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <a href="dashboard.html" class="btn btn-primary">View Dashboard</a>
+                <a href="sos.html" class="btn btn-danger">Emergency SOS</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Heart Monitoring System. Your safety is our priority.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/monitoring.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert History - Heart Monitoring System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>❤️ Heart Monitor</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="monitoring.html">Monitoring</a></li>
+                <li><a href="sos.html">SOS</a></li>
+                <li><a href="history.html" class="active">History</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="userDropdown">
+                        <span id="navUsername">User</span> ▼
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="profile.html">Profile Settings</a>
+                        <a href="logout.html">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="page-header">
+            <h2>Alert History</h2>
+            <p>View all your previous SOS alerts and their locations</p>
+        </div>
+
+        <div class="history-container">
+            <div class="alerts-list" id="alertsList">
+                <p class="loading-text">Loading alert history...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="mapModal" class="modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2>Alert Location</h2>
+                <button class="close-modal" id="closeMapModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="map" style="height: 400px; width: 100%;"></div>
+                <div class="location-details" id="locationDetails"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Heart Monitoring System. Your safety is our priority.</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/history.js"></script>
+</body>
+</html>
