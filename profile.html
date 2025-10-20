@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Settings - Heart Monitoring System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/forms.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>❤️ Heart Monitor</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="monitoring.html">Monitoring</a></li>
+                <li><a href="sos.html">SOS</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="userDropdown">
+                        <span id="navUsername">User</span> ▼
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="profile.html" class="active">Profile Settings</a>
+                        <a href="logout.html">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="page-header">
+            <h2>Profile Settings</h2>
+            <p>Update your personal information and preferences</p>
+        </div>
+
+        <div class="profile-section">
+            <div class="profile-tabs">
+                <button class="tab-btn active" data-tab="personal">Personal Info</button>
+                <button class="tab-btn" data-tab="security">Security</button>
+                <button class="tab-btn" data-tab="preferences">Preferences</button>
+            </div>
+
+            <div class="tab-content active" id="personal">
+                <h3>Personal Information</h3>
+                <form id="personalInfoForm" class="profile-form">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                        <span class="error-message" id="fullNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dateOfBirth">Date of Birth</label>
+                        <input type="date" id="dateOfBirth" name="dateOfBirth">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea id="address" name="address" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+
+            <div class="tab-content" id="security">
+                <h3>Security Settings</h3>
+                <form id="passwordForm" class="profile-form">
+                    <div class="form-group">
+                        <label for="currentPassword">Current Password</label>
+                        <input type="password" id="currentPassword" name="currentPassword" required>
+                        <span class="error-message" id="currentPasswordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <input type="password" id="newPassword" name="newPassword" required>
+                        <span class="error-message" id="newPasswordError"></span>
+                        <small class="form-hint">Minimum 8 characters, including letters and numbers</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmNewPassword">Confirm New Password</label>
+                        <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
+                        <span class="error-message" id="confirmNewPasswordError"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Change Password</button>
+                </form>
+            </div>
+
+            <div class="tab-content" id="preferences">
+                <h3>System Preferences</h3>
+                <form id="preferencesForm" class="profile-form">
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="emailNotifications" checked>
+                            Email notifications for alerts
+                        </label>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="smsNotifications" checked>
+                            SMS notifications for alerts
+                        </label>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="autoSOS">
+                            Automatic SOS when distress is detected
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="heartRateThreshold">Heart Rate Alert Threshold (BPM)</label>
+                        <input type="number" id="heartRateThreshold" name="heartRateThreshold" min="60" max="200" value="120">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gsrThreshold">GSR Alert Threshold (μS)</label>
+                        <input type="number" id="gsrThreshold" name="gsrThreshold" min="1" max="100" value="50">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save Preferences</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Heart Monitoring System. Your safety is our priority.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
